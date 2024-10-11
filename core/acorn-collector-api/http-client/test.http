@@ -1,0 +1,10 @@
+### health check
+GET {{base_url}}/health
+
+### echo
+POST {{base_url}}/echo
+Content-Type: application/json
+
+{
+  "message": "Hello, World!"
+}
