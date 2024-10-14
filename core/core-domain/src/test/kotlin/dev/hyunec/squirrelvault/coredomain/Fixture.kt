@@ -15,5 +15,10 @@ object Fixture {
             return@run (this::class.java.getResourceAsStream("/json/acornV2.json"))!!
                 .bufferedReader().use { it.readText() }
         }
+
+        fun acornV3() = run {
+            return@run (this::class.java.getResourceAsStream("/json/acornV3.json"))!!
+                .bufferedReader().use { it.readText() }
+        }
     }
 }
