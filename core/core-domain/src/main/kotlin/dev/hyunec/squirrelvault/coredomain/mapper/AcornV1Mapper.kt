@@ -21,9 +21,9 @@ class AcornV1Mapper : AcornMapper {
             memo = JsonPath.read(jsonString, "$.source.memo"),
         )
         val acorn = Acorn(
-            source = source,
-            type = Acorn.Type.valueOf(JsonPath.read(jsonString, "$.type")),
-            subType = Acorn.SubType.valueOf(JsonPath.read(jsonString, "$.subType")),
+//            source = source,
+//            type = Acorn.Type.valueOf(JsonPath.read(jsonString, "$.type")),
+//            subType = Acorn.SubType.valueOf(JsonPath.read(jsonString, "$.subType")),
             memo = JsonPath.read(jsonString, "$.memo"),
         )
 

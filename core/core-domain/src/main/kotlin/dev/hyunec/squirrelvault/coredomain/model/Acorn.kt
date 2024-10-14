@@ -7,13 +7,18 @@ package dev.hyunec.squirrelvault.coredomain.model
  * @property subType 과금 세부 구분. NONE 은 해당 사항 없음을 의미
  */
 data class Acorn(
-    val source: Source,
-
-    val type: Type,
+//    val source: Source,
+//
+//    val type: Type,
     val subType: SubType,
 
-    val memo: String
+    val memo: String,
 ) {
+    constructor(memo: String) : this(
+        subType = SubType.NONE,
+        memo = memo
+    )
+
     enum class Type {
         MODEL_CALL,
         DOCUMENT,
