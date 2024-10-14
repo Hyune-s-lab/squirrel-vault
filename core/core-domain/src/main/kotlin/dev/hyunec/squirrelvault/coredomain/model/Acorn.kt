@@ -12,7 +12,7 @@ data class Acorn(
     val type: Type,
     val subType: SubType,
 
-    val memo: String
+    val memo: String,
 ) {
     enum class Type {
         MODEL_CALL,
