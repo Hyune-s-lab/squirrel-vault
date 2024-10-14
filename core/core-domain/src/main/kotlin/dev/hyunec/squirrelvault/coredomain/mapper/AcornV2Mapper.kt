@@ -6,16 +6,21 @@ import dev.hyunec.squirrelvault.coredomain.model.Source
 import org.springframework.stereotype.Component
 import java.time.Instant
 
+/**
+ * v1 -> v2
+ * - source.memo 추가
+ * - source.memo2 추가
+ */
 @Component
-class AcornV1Mapper : AcornMapper {
+class AcornV2Mapper : AcornMapper {
     override fun map(jsonString: String): Acorn {
         val task = Source.Task(
             id = JsonPath.read(jsonString, "$.source.task.id"),
             name = JsonPath.read(jsonString, "$.source.task.name"),
             completedAt = Instant.parse(JsonPath.read(jsonString, "$.source.task.completedAt")),
             requesterId = JsonPath.read(jsonString, "$.source.task.requesterId"),
-            memo = "",
-            memo2 = "",
+            memo = JsonPath.read(jsonString, "$.source.task.memo"),
+            memo2 = JsonPath.read(jsonString, "$.source.task.memo2"),
         )
         val source = Source(
             name = JsonPath.read(jsonString, "$.source.name"),

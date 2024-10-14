@@ -19,6 +19,9 @@ data class Source(
         val name: String,
         val completedAt: Instant,
 
-        val requesterId: String
+        val requesterId: String,
+
+        val memo: String,
+        val memo2: String
     )
 }
