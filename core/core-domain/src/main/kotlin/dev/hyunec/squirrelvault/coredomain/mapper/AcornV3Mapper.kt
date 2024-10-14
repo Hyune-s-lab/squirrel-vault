@@ -7,12 +7,11 @@ import org.springframework.stereotype.Component
 import java.time.Instant
 
 /**
- * v1 -> v2
- * - source.memo 추가
- * - source.memo2 추가
+ * v2 -> v3
+ * - source.memo2 제거
  */
 @Component
-class AcornV2Mapper : AcornMapper {
+class AcornV3Mapper : AcornMapper {
     override fun map(jsonString: String): Acorn {
         val task = Source.Task(
             id = JsonPath.read(jsonString, "$.source.task.id"),

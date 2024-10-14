@@ -22,6 +22,5 @@ data class Source(
         val requesterId: String,
 
         val memo: String,
-        val memo2: String
     )
 }

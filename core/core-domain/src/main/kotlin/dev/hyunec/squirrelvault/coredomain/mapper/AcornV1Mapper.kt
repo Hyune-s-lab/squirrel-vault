@@ -15,7 +15,6 @@ class AcornV1Mapper : AcornMapper {
             completedAt = Instant.parse(JsonPath.read(jsonString, "$.source.task.completedAt")),
             requesterId = JsonPath.read(jsonString, "$.source.task.requesterId"),
             memo = "",
-            memo2 = "",
         )
         val source = Source(
             name = JsonPath.read(jsonString, "$.source.name"),
