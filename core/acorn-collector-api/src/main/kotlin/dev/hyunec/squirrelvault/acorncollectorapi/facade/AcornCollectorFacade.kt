@@ -8,7 +8,7 @@ import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.stereotype.Service
 
 @Service
-class AcornCollector(
+class AcornCollectorFacade(
     private val v1Mapper: AcornV1Mapper,
     private val v2Mapper: AcornV2Mapper,
     private val v3Mapper: AcornV3Mapper,

@@ -8,8 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest
 import kotlin.test.Test
 
 @SpringBootTest
-class AcornCollectorTest(
-    private val sut: AcornCollector,
+class AcornCollectorFacadeTest(
+    private val sut: AcornCollectorFacade,
 
     private val acornRepository: AcornRepository
 ) : TestSupport() {
