@@ -14,6 +14,17 @@ import java.time.Instant
 @Component
 class AcornV2Mapper : AcornMapper {
     override fun map(jsonString: String): Acorn {
+        val acorn = Acorn(
+            source = source(jsonString),
+            type = Acorn.Type.valueOf(JsonPath.read(jsonString, "$.type")),
+            subType = Acorn.SubType.valueOf(JsonPath.read(jsonString, "$.subType")),
+            memo = JsonPath.read(jsonString, "$.memo"),
+        )
+
+        return acorn
+    }
+
+    override fun source(jsonString: String): Source {
         val task = Source.Task(
             id = JsonPath.read(jsonString, "$.source.task.id"),
             name = JsonPath.read(jsonString, "$.source.task.name"),
@@ -21,18 +32,10 @@ class AcornV2Mapper : AcornMapper {
             requesterId = JsonPath.read(jsonString, "$.source.task.requesterId"),
             memo = JsonPath.read(jsonString, "$.source.task.memo"),
         )
-        val source = Source(
+        return Source(
             name = JsonPath.read(jsonString, "$.source.name"),
             task = task,
             memo = JsonPath.read(jsonString, "$.source.memo"),
         )
-        val acorn = Acorn(
-            source = source,
-            type = Acorn.Type.valueOf(JsonPath.read(jsonString, "$.type")),
-            subType = Acorn.SubType.valueOf(JsonPath.read(jsonString, "$.subType")),
-            memo = JsonPath.read(jsonString, "$.memo"),
-        )
-
-        return acorn
     }
 }
