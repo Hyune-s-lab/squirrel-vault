@@ -10,6 +10,7 @@ import java.time.Instant
 class AcornV1Mapper : AcornMapper {
     override fun map(jsonString: String): Acorn {
         val acorn = Acorn(
+            metadata = metadata(jsonString),
             source = source(jsonString),
             type = Acorn.Type.valueOf(JsonPath.read(jsonString, "$.type")),
             subType = Acorn.SubType.valueOf(JsonPath.read(jsonString, "$.subType")),

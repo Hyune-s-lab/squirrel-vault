@@ -14,6 +14,7 @@ import java.time.Instant
 class AcornV3Mapper : AcornMapper {
     override fun map(jsonString: String): Acorn {
         val acorn = Acorn(
+            metadata = metadata(jsonString),
             source = source(jsonString),
             type = Acorn.Type.valueOf(JsonPath.read(jsonString, "$.type")),
             subType = Acorn.SubType.valueOf(JsonPath.read(jsonString, "$.subType")),
@@ -29,7 +30,7 @@ class AcornV3Mapper : AcornMapper {
             name = JsonPath.read(jsonString, "$.source.task.name"),
             completedAt = Instant.parse(JsonPath.read(jsonString, "$.source.task.completedAt")),
             requesterId = JsonPath.read(jsonString, "$.source.task.requesterId"),
-            memo = JsonPath.read(jsonString, "$.source.task.memo"),
+            memo = "",
         )
         return Source(
             name = JsonPath.read(jsonString, "$.source.name"),
