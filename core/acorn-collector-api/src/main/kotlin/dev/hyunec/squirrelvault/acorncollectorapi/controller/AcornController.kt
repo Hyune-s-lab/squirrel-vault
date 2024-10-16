@@ -10,11 +10,17 @@ import org.springframework.web.bind.annotation.RestController
 class AcornController(
     private val acornCollectorFacade: AcornCollectorFacade
 ) {
+    @Deprecated("")
     @PostMapping("/api/v1/acorn/{schemaVersion}")
     fun collectAcorn(
         @PathVariable schemaVersion: String,
         @RequestBody jsonString: String
     ) {
         acornCollectorFacade.collect(schemaVersion, jsonString)
+    }
+
+    @PostMapping("/api/v1/acorn")
+    fun collectAcornV2(@RequestBody jsonString: String) {
+        // todo
     }
 }
