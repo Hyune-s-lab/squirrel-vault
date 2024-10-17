@@ -24,6 +24,13 @@ class AcornMapRepository(
         return acornMap.values.toList()
     }
 
+    /**
+     * test only
+     */
+    fun init() {
+        acornMap.clear()
+    }
+
     private fun generateId(): String {
         return "${acornMap.size + 1}"
     }
