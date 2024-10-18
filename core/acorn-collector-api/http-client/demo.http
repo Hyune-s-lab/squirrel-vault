@@ -1,0 +1,31 @@
+###
+POST {{base_url}}/demo/clear
+Content-Type: application/json
+
+###
+POST {{base_url}}/demo/create-json
+Content-Type: application/json
+
+{
+  "data": {
+    "v1": "3",
+    "v2": "2",
+    "v3": "1",
+    "v4": "5"
+  }
+}
+
+###
+POST {{base_url}}/demo/send/v1
+
+###
+POST {{base_url}}/demo/send/v2
+
+###
+POST {{base_url}}/demo/send/v3
+
+###
+POST {{base_url}}/demo/send/v4
+
+###
+GET {{base_url}}/api/v1/statistics/count

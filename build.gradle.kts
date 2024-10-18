@@ -38,6 +38,8 @@ subprojects {
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
         implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
         implementation("com.jayway.jsonpath:json-path")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
 
         val kotlinLoggingVersion: String by project
         implementation("io.github.oshai:kotlin-logging-jvm:$kotlinLoggingVersion")
