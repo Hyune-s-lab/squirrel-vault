@@ -44,7 +44,7 @@ class DemoController(
     )
 
 
-    @PostMapping("/demo/clear")
+    @PostMapping("/demo/init")
     fun clear() {
         val directoryPath = Paths.get(saveDirectory)
 
