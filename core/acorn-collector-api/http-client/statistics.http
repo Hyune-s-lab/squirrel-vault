@@ -1,0 +1,5 @@
+###
+GET {{base_url}}/api/v1/statistics/count
+
+###
+GET {{base_url}}/api/v1/statistics/

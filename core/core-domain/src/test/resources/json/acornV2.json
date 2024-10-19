@@ -1,0 +1,17 @@
+{
+  "source": {
+    "name": "stargate",
+    "task": {
+      "id": "140ab50d-d8c8-4132-9891-672c74a5f877",
+      "name": "MODEL_CALL",
+      "completedAt": "2024-10-13T18:18:34.479501Z",
+      "requesterId": "83292ce0-17d4-48a8-b151-48bfedf874e4",
+      "memo": "Nihil officiis quas.",
+      "memo2": "Nihil."
+    },
+    "memo": "Nihil officiis quas nostrum qui rem aliquid."
+  },
+  "type": "MODEL_CALL",
+  "subType": "CHAT",
+  "memo": "Repellendus ratione error quae nostrum."
+}

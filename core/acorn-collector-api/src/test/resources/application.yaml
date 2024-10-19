@@ -1,0 +1,6 @@
+spring.config.activate.on-profile: test
+
+logging:
+  level:
+    root: info
+    dev.hyunec: debug

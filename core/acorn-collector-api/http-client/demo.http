@@ -1,0 +1,42 @@
+### 생성된 json 파일과, in-memory 정보를 초기화 합니다.
+POST {{base_url}}/demo/init
+Content-Type: application/json
+
+### 각 버전별로 json 파일을 생성 합니다. `path: /saved_jsons`
+### source.task.requesterId 는 과금 대상의 고유 식별자로 데모에서는 임의의 10개 값이 지정 되었습니다.
+### source.task.completedAt 은 실행 시점의 저번 달 무작위 시점의 UTC 시간으로 설정 됩니다.
+POST {{base_url}}/demo/create-json
+Content-Type: application/json
+
+{
+  "data": {
+    "v1": "3",
+    "v2": "2",
+    "v3": "1",
+    "v4": "5"
+  }
+}
+
+### 생성된 파일 중 v1 파일을 collector api 에 전송 합니다.
+POST {{base_url}}/demo/send/v1
+
+### 생성된 파일 중 v2 파일을 collector api 에 전송 합니다.
+POST {{base_url}}/demo/send/v2
+
+### 생성된 파일 중 v3 파일을 collector api 에 전송 합니다.
+POST {{base_url}}/demo/send/v3
+
+### 생성된 파일 중 v4 파일을 collector api 에 전송 합니다.
+POST {{base_url}}/demo/send/v4
+
+### 저장된 과금 정보를 조회 합니다.
+### startDate, endDate 는 KST 기준 입니다.
+### requesterIds 는 과금 대상의 고유 식별자로 복수의 값을 입력할 수 있습니다.
+@startDate = 2024-09-01
+@endDate = 2024-09-25
+@requesterIds = a1b2c3d4e5f6,1a2b3c4d5e6f
+
+GET {{base_url}}/api/v1/acorn?startDate={{startDate}}&endDate={{endDate}}&requesterIds={{requesterIds}}
+
+### 실 과금을 위한 통계 정보를 조회 합니다.
+GET {{base_url}}/api/v1/statistics/summary?startDate={{startDate}}&endDate={{endDate}}&requesterIds={{requesterIds}}
