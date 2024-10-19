@@ -22,11 +22,13 @@ class StatisticsController(
         val endInstant = endDate.atTime(LocalTime.MAX).atZone(ZoneId.of("Asia/Seoul")).toInstant()
 
         return Response(
-            data = statisticsFacade.summary(startInstant, endInstant, requesterIds)
+            count = statisticsFacade.summary(startInstant, endInstant, requesterIds),
+            policy = statisticsFacade.billingPolicy()
         )
     }
 
     data class Response(
-        val data: Map<String, String>
+        val count: Map<String, String>,
+        val policy: Map<String, String>,
     )
 }
