@@ -9,11 +9,6 @@ import org.springframework.web.bind.annotation.RestController
 class StatisticsController(
     private val statisticsFacade: StatisticsFacade
 ) {
-    @GetMapping("/api/v1/statistics/count")
-    fun count(): Int {
-        return statisticsFacade.count()
-    }
-
     @GetMapping("/api/v1/statistics/")
     fun readAll(): List<Acorn> {
         return statisticsFacade.readAll()
